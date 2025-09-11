@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HuertoHogar - Productos Frescos del Campo a tu Mesa</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>HuertoHogar</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                    <li><a href="carrito.html" class="nav-link cart-link">Carrito (<span id="cart-count">0</span>)</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">¡Descubre la frescura del campo con HuertoHogar!</h2>
+                <p class="hero-subtitle">Conéctate con la naturaleza y lleva lo mejor del campo a tu mesa.</p>
+                <p class="hero-description">¡Únete a nosotros y disfruta de productos frescos y saludables, directo a tu hogar!</p>
+                <button class="cta-button" onclick="window.location.href='productos.html'">Ver Productos</button>
+            </div>
+            <div class="hero-image">
+                <img src="images/productos_frescos_1.jpg" alt="Productos frescos de HuertoHogar">
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">¿Por qué elegir HuertoHogar?</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🌱</div>
+                        <h3>Productos Frescos</h3>
+                        <p>Directamente del campo a tu mesa, garantizando la máxima frescura y calidad en cada producto.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🚚</div>
+                        <h3>Entrega Rápida</h3>
+                        <p>Entregamos en más de 9 puntos del país, incluyendo Santiago, Puerto Montt, Villarica y más.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🌿</div>
+                        <h3>Productos Orgánicos</h3>
+                        <p>Cultivados sin pesticidas ni químicos, promoviendo una alimentación saludable y sostenible.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">👨‍🌾</div>
+                        <h3>Apoyo Local</h3>
+                        <p>Conectamos directamente con productores locales, apoyando la economía y comunidades rurales.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Nuestras Categorías</h2>
+                <div class="categories-grid">
+                    <article class="category-card" onclick="filterProducts('frutas')">
+                        <div class="category-image">
+                            <img src="images/productos_frescos_1.jpg" alt="Frutas Frescas">
+                        </div>
+                        <div class="category-content">
+                            <h3>Frutas Frescas</h3>
+                            <p>Frutas de temporada cultivadas en el punto óptimo de madurez para asegurar su sabor y frescura.</p>
+                        </div>
+                    </article>
+                    <article class="category-card" onclick="filterProducts('verduras')">
+                        <div class="category-image">
+                            <img src="images/productos_frescos_2.jpg" alt="Verduras Orgánicas">
+                        </div>
+                        <div class="category-content">
+                            <h3>Verduras Orgánicas</h3>
+                            <p>Verduras cultivadas sin pesticidas ni químicos, garantizando un sabor auténtico y natural.</p>
+                        </div>
+                    </article>
+                    <article class="category-card" onclick="filterProducts('organicos')">
+                        <div class="category-image">
+                            <img src="images/campos_agricolas_1.jpg" alt="Productos Orgánicos">
+                        </div>
+                        <div class="category-content">
+                            <h3>Productos Orgánicos</h3>
+                            <p>Productos elaborados con ingredientes naturales y procesados de manera responsable.</p>
+                        </div>
+                    </article>
+                    <article class="category-card" onclick="filterProducts('lacteos')">
+                        <div class="category-image">
+                            <img src="images/productores_locales_1.jpg" alt="Productos Lácteos">
+                        </div>
+                        <div class="category-content">
+                            <h3>Productos Lácteos</h3>
+                            <p>Productos lácteos de granjas locales dedicadas a la producción responsable y de calidad.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Los productos de HuertoHogar son increíblemente frescos. La diferencia se nota desde el primer bocado."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>María González</strong>
+                            <span>Santiago</span>
+                        </div>
+                    </article>
+                    <article class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Excelente servicio y productos de calidad. Ahora toda mi familia come más saludable."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>Carlos Rodríguez</strong>
+                            <span>Valparaíso</span>
+                        </div>
+                    </article>
+                    <article class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Me encanta poder apoyar a los productores locales mientras cuido mi alimentación."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <strong>Ana Martínez</strong>
+                            <span>Concepción</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HuertoHogar</h3>
+                    <p>Conectando a las familias chilenas con el campo, promoviendo un estilo de vida saludable y sostenible.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="productos.html?categoria=frutas">Frutas Frescas</a></li>
+                        <li><a href="productos.html?categoria=verduras">Verduras Orgánicas</a></li>
+                        <li><a href="productos.html?categoria=organicos">Productos Orgánicos</a></li>
+                        <li><a href="productos.html?categoria=lacteos">Productos Lácteos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Email: info@huertohogar.cl</p>
+                    <p>Teléfono: +56 9 1234 5678</p>
+                    <p>Horario: Lun-Vie 9:00-18:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HuertoHogar. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
