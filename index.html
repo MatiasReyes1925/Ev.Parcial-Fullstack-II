@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HuertoHogar - Del Campo a tu Mesa</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">
+                <i class="fas fa-leaf"></i>
+                HuertoHogar
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" onclick="showPage('home')">Inicio</a></li>
+                    <li><a href="#" onclick="showPage('products')">Productos</a></li>
+                    <li><a href="#" onclick="showPage('blogs')">Blogs</a></li>
+                    <li><a href="#" onclick="showPage('about')">Nosotros</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <div class="cart-icon" onclick="showCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button class="btn btn-primary" onclick="showPage('login')">Ingresar</button>
+                <button class="btn btn-secondary" onclick="showPage('register')">Registrarse</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <!-- Página de Inicio -->
+        <div id="homePage" class="page">
+            <section class="hero">
+                <div class="container">
+                    <h1>¡Del Campo Directo a tu Mesa!</h1>
+                    <p>Descubre la frescura del campo con HuertoHogar. Productos orgánicos y naturales de la mejor calidad, entregados directamente en tu hogar.</p>
+                    <a href="#" class="btn btn-secondary" onclick="showPage('products')">Ver Productos</a>
+                </div>
+            </section>
+
+            <section class="container">
+                <div class="page-header">
+                    <h2>Productos Destacados</h2>
+                    <p>Una selección de nuestros productos más frescos y populares</p>
+                </div>
+                <div class="products-grid" id="featuredProducts">
+                    <!-- Los productos se cargan dinámicamente -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Página de Productos -->
+        <div id="productsPage" class="page hidden">
+            <div class="container page-content">
+                <div class="page-header">
+                    <h1>Nuestros Productos</h1>
+                    <p>Encuentra todos nuestros productos frescos y orgánicos</p>
+                </div>
+                <div class="products-grid" id="allProducts">
+                    <!-- Los productos se cargan dinámicamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Página de Login -->
+        <div id="loginPage" class="page hidden">
+            <div class="container page-content">
+                <div class="form-container">
+                    <h2>Iniciar Sesión</h2>
+                    <form id="loginForm" onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label for="loginEmail">Correo Electrónico</label>
+                            <input type="email" id="loginEmail" class="form-control" required>
+                            <div class="error-message" id="loginEmailError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Contraseña</label>
+                            <input type="password" id="loginPassword" class="form-control" required>
+                            <div class="error-message" id="loginPasswordError"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Ingresar</button>
+                    </form>
+                    <p style="text-align: center; margin-top: 1rem;">
+                        ¿No tienes cuenta? <a href="#" onclick="showPage('register')" style="color: var(--primary-green);">Regístrate aquí</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página de Registro -->
+        <div id="registerPage" class="page hidden">
+            <div class="container page-content">
+                <div class="form-container">
+                    <h2>Crear Cuenta</h2>
+                    <form id="registerForm" onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label for="registerRun">RUN</label>
+                            <input type="text" id="registerRun" class="form-control" placeholder="Ej: 19011022K" required>
+                            <div class="error-message" id="registerRunError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerName">Nombre</label>
+                            <input type="text" id="registerName" class="form-control" required>
+                            <div class="error-message" id="registerNameError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerLastname">Apellidos</label>
+                            <input type="text" id="registerLastname" class="form-control" required>
+                            <div class="error-message" id="registerLastnameError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Correo Electrónico</label>
+                            <input type="email" id="registerEmail" class="form-control" required>
+                            <div class="error-message" id="registerEmailError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerBirthdate">Fecha de Nacimiento</label>
+                            <input type="date" id="registerBirthdate" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="registerRegion">Región</label>
+                            <select id="registerRegion" class="form-control" onchange="updateComunas()">
+                                <option value="">Selecciona una región</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerComuna">Comuna</label>
+                            <select id="registerComuna" class="form-control">
+                                <option value="">Selecciona una comuna</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerAddress">Dirección</label>
+                            <input type="text" id="registerAddress" class="form-control" required>
+                            <div class="error-message" id="registerAddressError"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Registrarse</button>
+                    </form>
+                    <p style="text-align: center; margin-top: 1rem;">
+                        ¿Ya tienes cuenta? <a href="#" onclick="showPage('login')" style="color: var(--primary-green);">Inicia sesión aquí</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página de Contacto -->
+        <div id="contactPage" class="page hidden">
+            <div class="container page-content">
+                <div class="form-container">
+                    <h2>Contáctanos</h2>
+                    <form id="contactForm" onsubmit="handleContact(event)">
+                        <div class="form-group">
+                            <label for="contactName">Nombre</label>
+                            <input type="text" id="contactName" class="form-control" required>
+                            <div class="error-message" id="contactNameError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Correo Electrónico</label>
+                            <input type="email" id="contactEmail" class="form-control" required>
+                            <div class="error-message" id="contactEmailError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactComment">Comentario</label>
+                            <textarea id="contactComment" class="form-control" rows="5" required></textarea>
+                            <div class="error-message" id="contactCommentError"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página de Nosotros -->
+        <div id="aboutPage" class="page hidden">
+            <div class="container page-content">
+                <div class="page-header">
+                    <h1>Sobre HuertoHogar</h1>
+                </div>
+                <div style="max-width: 1000px; margin: 0 auto;">
+                    <h3>Nuestra Misión</h3>
+                    <p>Nuestra misión es proporcionar productos frescos y de calidad directamente desde el campo hasta la puerta de nuestros clientes, garantizando la frescura y el sabor en cada entrega. Nos comprometemos a fomentar una conexión más cercana entre los consumidores y los agricultores locales, apoyando prácticas agrícolas sostenibles y promoviendo una alimentación saludable en todos los hogares chilenos.</p>
+
+                    <h3>Nuestra Visión</h3>
+                    <p>Nuestra visión es ser la tienda online líder en la distribución de productos frescos y naturales en Chile, reconocida por nuestra calidad excepcional, servicio al cliente y compromiso con la sostenibilidad. Aspiramos a expandir nuestra presencia a nivel nacional e internacional, estableciendo un nuevo estándar en la distribución de productos agrícolas directos del productor al consumidor.</p>
+
+                    <h3>Nuestras Ubicaciones</h3>
+                    <p>Con más de 6 años de experiencia, operamos en más de 9 puntos a lo largo del país. Encuentra nuestras tiendas en el mapa:</p>
+                    
+                    <!-- Mapa de Google Maps -->
+                    <div class="map-container" style="margin: 2rem 0;">
+                        <div id="map" style="height: 500px; width: 100%;"></div>
+                    </div>
+
+                    <!-- Lista de ubicaciones -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                        <div class="location-card">
+                            <h4><i class="fas fa-map-marker-alt" style="color: var(--primary-green);"></i> Santiago</h4>
+                            <p>Región Metropolitana</p>
+                        </div>
+                        <div class="location-card">
+                            <h4><i class="fas fa-map-marker-alt" style="color: var(--primary-green);"></i> Puerto Montt</h4>
+                            <p>Región de Los Lagos</p>
+                        </div>
+                        <div class="location-card">
+                            <h4><i class="fas fa-map-marker-alt" style="color: var(--primary-green);"></i> Villarica</h4>
+                            <p>Región de La Araucanía</p>
+                        </div>
+                        <div class="location-card">
+                            <h4><i class="fas fa-map-marker-alt" style="color: var(--primary-green);"></i> Nacimiento</h4>
+                            <p>Región del Biobío</p>
+                        </div>
+                        <div class="location-card">
+                            <h4><i class="fas fa-map-marker-alt" style="color: var(--primary-green);"></i> Viña del Mar</h4>
+                            <p>Región de Valparaíso</p>
+                        </div>
+                        <div class="location-card">
+                            <h4><i class="fas fa-map-marker-alt" style="color: var(--primary-green);"></i> Valparaíso</h4>
+                            <p>Región de Valparaíso</p>
+                        </div>
+                        <div class="location-card">
+                            <h4><i class="fas fa-map-marker-alt" style="color: var(--primary-green);"></i> Concepción</h4>
+                            <p>Región del Biobío</p>
+                        </div>
+                    </div>
+
+                    <h3>Nuestro Equipo</h3>
+                    <p>Este proyecto ha sido desarrollado por un equipo de estudiantes comprometidos con la creación de soluciones tecnológicas para el sector agrícola chileno.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página de Blogs -->
+        <div id="blogsPage" class="page hidden">
+            <div class="container page-content">
+                <div class="page-header">
+                    <h1>Blog HuertoHogar</h1>
+                    <p>Noticias y artículos sobre alimentación saludable y sostenibilidad</p>
+                </div>
+                <div class="products-grid">
+                    <article class="product-card" onclick="showBlogDetail(1)">
+                        <div class="product-image" style="background: linear-gradient(45deg, var(--primary-green), var(--accent-yellow));">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Beneficios de los Alimentos Orgánicos</h3>
+                            <p>Descubre por qué elegir productos orgánicos puede mejorar tu salud y la del planeta...</p>
+                            <a href="#" class="btn btn-primary">Leer más</a>
+                        </div>
+                    </article>
+                    <article class="product-card" onclick="showBlogDetail(2)">
+                        <div class="product-image" style="background: linear-gradient(45deg, var(--accent-brown), var(--primary-green));">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Agricultura Sostenible en Chile</h3>
+                            <p>Conoce las prácticas agrícolas que estamos implementando para cuidar nuestro medio ambiente...</p>
+                            <a href="#" class="btn btn-primary">Leer más</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel de Administrador -->
+        <div id="adminPage" class="page hidden">
+            <div class="admin-sidebar">
+                <ul class="admin-menu">
+                    <li><a href="#" onclick="showAdminSection('dashboard')" class="active">Dashboard</a></li>
+                    <li><a href="#" onclick="showAdminSection('products')">Gestión de Productos</a></li>
+                    <li><a href="#" onclick="showAdminSection('users')">Gestión de Usuarios</a></li>
+                    <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+            <div class="admin-content">
+                <div id="adminDashboard">
+                    <h1>Panel de Administración</h1>
+                    <p>Bienvenido al panel de administración de HuertoHogar</p>
+                </div>
+                <div id="adminProducts" class="hidden">
+                    <h1>Gestión de Productos</h1>
+                    <button class="btn btn-primary" onclick="showProductForm()">Nuevo Producto</button>
+                    <table class="data-table" style="margin-top: 2rem;">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <!-- Los productos se cargan dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="adminUsers" class="hidden">
+                    <h1>Gestión de Usuarios</h1>
+                    <button class="btn btn-primary" onclick="showUserForm()">Nuevo Usuario</button>
+                    <table class="data-table" style="margin-top: 2rem;">
+                        <thead>
+                            <tr>
+                                <th>RUN</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Tipo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <!-- Los usuarios se cargan dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal del Carrito -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Carrito de Compras</h2>
+                <button class="close-modal" onclick="closeCart()">&times;</button>
+            </div>
+            <div id="cartItems">
+                <!-- Los items del carrito se cargan dinámicamente -->
+            </div>
+            <div class="cart-total" id="cartTotal">
+                Total: $0
+            </div>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;" onclick="checkout()">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de Producto -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="productModalTitle"></h2>
+                <button class="close-modal" onclick="closeProductModal()">&times;</button>
+            </div>
+            <div id="productModalContent">
+                <!-- El contenido del producto se carga dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HuertoHogar</h3>
+                    <p>Del campo directo a tu mesa. Productos frescos y orgánicos de la mejor calidad.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#" onclick="showPage('home')" style="color: var(--white); text-decoration: none;">Inicio</a></li>
+                        <li><a href="#" onclick="showPage('products')" style="color: var(--white); text-decoration: none;">Productos</a></li>
+                        <li><a href="#" onclick="showPage('about')" style="color: var(--white); text-decoration: none;">Nosotros</a></li>
+                        <li><a href="#" onclick="showPage('contact')" style="color: var(--white); text-decoration: none;">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-phone"></i> +56 9 1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> contacto@huertohogar.cl</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Chile</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HuertoHogar. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dRWTU_Wk7AhSGw&callback=initMap"></script>
+</body>
+</html>
