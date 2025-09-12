@@ -8,7 +8,7 @@ let products = [
         stock: 150,
         category: 'frutas',
         description: 'Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule. Perfectas para meriendas saludables o como ingrediente en postres.',
-        image: 'images/productos_frescos_1.jpg',
+        image: 'images/manzanaFuji.JPG',
         unit: 'kilo'
     },
     {
@@ -18,7 +18,7 @@ let products = [
         stock: 200,
         category: 'frutas',
         description: 'Jugosas y ricas en vitamina C, estas naranjas Valencia son ideales para zumos frescos y refrescantes.',
-        image: 'images/productos_frescos_1.jpg',
+        image: 'images/naranjas.JPG',
         unit: 'kilo'
     },
     {
@@ -28,7 +28,7 @@ let products = [
         stock: 250,
         category: 'frutas',
         description: 'Plátanos maduros y dulces, perfectos para el desayuno o como snack energético.',
-        image: 'images/productos_frescos_1.jpg',
+        image: 'images/platanos.JPG',
         unit: 'kilo'
     },
     {
@@ -38,7 +38,7 @@ let products = [
         stock: 100,
         category: 'verduras',
         description: 'Zanahorias crujientes cultivadas sin pesticidas en la Región de O\'Higgins.',
-        image: 'images/productos_frescos_2.jpg',
+        image: 'images/zanahorias.JPG',
         unit: 'kilo'
     },
     {
@@ -48,7 +48,7 @@ let products = [
         stock: 80,
         category: 'verduras',
         description: 'Espinacas frescas y nutritivas, perfectas para ensaladas y batidos verdes.',
-        image: 'images/productos_frescos_2.jpg',
+        image: 'images/espinacas.JPG',
         unit: 'bolsa de 500g'
     },
     {
@@ -58,7 +58,7 @@ let products = [
         stock: 120,
         category: 'verduras',
         description: 'Pimientos rojos, amarillos y verdes, ideales para salteados y platos coloridos.',
-        image: 'images/productos_frescos_2.jpg',
+        image: 'images/pimenton.JPG',
         unit: 'kilo'
     },
     {
@@ -68,7 +68,7 @@ let products = [
         stock: 50,
         category: 'organicos',
         description: 'Miel pura y orgánica producida por apicultores locales. Rica en antioxidantes.',
-        image: 'images/campos_agricolas_1.jpg',
+        image: 'images/miel.JPG',
         unit: 'frasco de 500g'
     },
     {
@@ -78,7 +78,7 @@ let products = [
         stock: 75,
         category: 'organicos',
         description: 'Quinua orgánica de alta calidad, rica en proteínas y minerales.',
-        image: 'images/campos_agricolas_1.jpg',
+        image: 'images/quinua.JPG',
         unit: 'kilo'
     },
     {
@@ -88,7 +88,7 @@ let products = [
         stock: 60,
         category: 'lacteos',
         description: 'Leche entera fresca de granjas locales, rica en calcio y nutrientes esenciales.',
-        image: 'images/productores_locales_1.jpg',
+        image: 'images/leche.JPG',
         unit: 'litro'
     }
 ];
