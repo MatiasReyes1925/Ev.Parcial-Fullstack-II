@@ -9,7 +9,7 @@ let products = [
         category: 'frutas',
         description: 'Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule. Perfectas para meriendas saludables o como ingrediente en postres.',
         image: 'images/manzanaFuji.JPG',
-        unit: 'kilo'
+        unit: 'Kg'
     },
     {
         id: 'FR002',
@@ -19,7 +19,7 @@ let products = [
         category: 'frutas',
         description: 'Jugosas y ricas en vitamina C, estas naranjas Valencia son ideales para zumos frescos y refrescantes.',
         image: 'images/naranjas.JPG',
-        unit: 'kilo'
+        unit: 'Kg'
     },
     {
         id: 'FR003',
@@ -29,7 +29,7 @@ let products = [
         category: 'frutas',
         description: 'Plátanos maduros y dulces, perfectos para el desayuno o como snack energético.',
         image: 'images/platanos.JPG',
-        unit: 'kilo'
+        unit: 'Kg'
     },
     {
         id: 'VR001',
@@ -39,7 +39,7 @@ let products = [
         category: 'verduras',
         description: 'Zanahorias crujientes cultivadas sin pesticidas en la Región de O\'Higgins.',
         image: 'images/zanahorias.JPG',
-        unit: 'kilo'
+        unit: 'Kg'
     },
     {
         id: 'VR002',
@@ -49,7 +49,7 @@ let products = [
         category: 'verduras',
         description: 'Espinacas frescas y nutritivas, perfectas para ensaladas y batidos verdes.',
         image: 'images/espinacas.JPG',
-        unit: 'bolsa de 500g'
+        unit: 'Bolsa de 500 Gr'
     },
     {
         id: 'VR003',
@@ -59,7 +59,7 @@ let products = [
         category: 'verduras',
         description: 'Pimientos rojos, amarillos y verdes, ideales para salteados y platos coloridos.',
         image: 'images/pimenton.JPG',
-        unit: 'kilo'
+        unit: 'Kg'
     },
     {
         id: 'PO001',
@@ -69,7 +69,7 @@ let products = [
         category: 'organicos',
         description: 'Miel pura y orgánica producida por apicultores locales. Rica en antioxidantes.',
         image: 'images/miel.JPG',
-        unit: 'frasco de 500g'
+        unit: 'Frasco de 500 Gr'
     },
     {
         id: 'PO003',
@@ -79,7 +79,7 @@ let products = [
         category: 'organicos',
         description: 'Quinua orgánica de alta calidad, rica en proteínas y minerales.',
         image: 'images/quinua.JPG',
-        unit: 'kilo'
+        unit: 'Kg'
     },
     {
         id: 'PL001',
@@ -89,7 +89,7 @@ let products = [
         category: 'lacteos',
         description: 'Leche entera fresca de granjas locales, rica en calcio y nutrientes esenciales.',
         image: 'images/leche.JPG',
-        unit: 'litro'
+        unit: 'Litro'
     }
 ];
 
@@ -387,7 +387,7 @@ function renderProducts(productsToRender = products) {
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
                 <p class="product-description">${product.description}</p>
-                <div class="product-price">$${product.price.toLocaleString()} CLP por ${product.unit}</div>
+                <div class="product-price">$${product.price.toLocaleString()}  / ${product.unit}</div>
                 <div class="product-stock">Stock: ${product.stock} ${product.unit}s</div>
                 <div class="product-actions">
                     <div class="quantity-selector">
