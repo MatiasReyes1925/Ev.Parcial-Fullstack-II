@@ -1,0 +1,342 @@
+/* Estilos para páginas de autenticación */
+.auth-section {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.auth-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    border: 1px solid #e9ecef;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2E8B57;
+    margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2E8B57;
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+}
+
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error {
+    border-color: #dc3545;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.form-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark {
+    background-color: #2E8B57;
+    border-color: #2E8B57;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.forgot-password {
+    color: #2E8B57;
+    text-decoration: none;
+    font-size: 0.9rem;
+    align-self: flex-end;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.auth-button {
+    background: linear-gradient(135deg, #2E8B57 0%, #228B22 100%);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.auth-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(46, 139, 87, 0.3);
+}
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+.auth-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.auth-divider {
+    text-align: center;
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e9ecef;
+}
+
+.auth-divider span {
+    background: white;
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.auth-links {
+    text-align: center;
+}
+
+.auth-links p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.auth-links a {
+    color: #2E8B57;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.demo-credentials {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #2E8B57;
+}
+
+.demo-credentials h4 {
+    color: #2E8B57;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.demo-credentials p {
+    margin: 0.25rem 0;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .auth-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    .form-options {
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .auth-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animaciones */
+.auth-card {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estados de carga */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #fff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mensajes de éxito */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #c3e6cb;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.success-message.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

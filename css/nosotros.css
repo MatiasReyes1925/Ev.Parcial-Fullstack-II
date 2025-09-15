@@ -1,0 +1,521 @@
+/* Estilos específicos para la página Nosotros */
+
+.page-header {
+    background: linear-gradient(135deg, #2E8B57 0%, #228B22 100%);
+    color: white;
+    padding: 6rem 0 4rem;
+    text-align: center;
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.about-intro {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.intro-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #8B4513;
+    margin-bottom: 2rem;
+}
+
+.intro-text p {
+    color: #666666;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.intro-image img:hover {
+    transform: scale(1.05);
+}
+
+.mission-vision {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.mission-card,
+.vision-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.mission-card h3,
+.vision-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #8B4513;
+    margin-bottom: 1.5rem;
+}
+
+.mission-card p,
+.vision-card p {
+    color: #666666;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.values {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: #2E8B57;
+}
+
+.value-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.value-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #8B4513;
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: #666666;
+    line-height: 1.6;
+}
+
+.locations {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.locations-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.locations-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.locations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.location-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.location-icon {
+    font-size: 1.5rem;
+    color: #2E8B57;
+}
+
+.location-info h4 {
+    font-family: 'Playfair Display', serif;
+    color: #8B4513;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.location-info p {
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chile-map {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    background: linear-gradient(180deg, #87CEEB 0%, #98FB98 30%, #F4A460 70%, #D2B48C 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.map-title {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    color: #8B4513;
+    font-size: 0.9rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.map-point {
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.map-point:hover {
+    transform: scale(1.2);
+}
+
+.point-marker {
+    width: 12px;
+    height: 12px;
+    background: #2E8B57;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(46, 139, 87, 0.5);
+    animation: pulse 2s infinite;
+}
+
+.point-label {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(46, 139, 87, 0.9);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.map-point:hover .point-label {
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 139, 87, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(46, 139, 87, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 139, 87, 0);
+    }
+}
+
+.team {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.member-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.1);
+}
+
+.member-info {
+    padding: 2rem;
+}
+
+.member-info h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #8B4513;
+    margin-bottom: 1rem;
+}
+
+.member-info p {
+    color: #666666;
+    line-height: 1.6;
+}
+
+.impact {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #2E8B57 0%, #228B22 100%);
+    color: white;
+    text-align: center;
+}
+
+.impact .section-title {
+    color: white;
+}
+
+.impact .section-title::after {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.impact-description {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.impact-description h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.impact-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.impact-description ul {
+    list-style: none;
+    padding: 0;
+}
+
+.impact-description li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.impact-description li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .intro-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .intro-text h2 {
+        font-size: 2rem;
+    }
+    
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .mission-card,
+    .vision-card {
+        padding: 2rem;
+    }
+    
+    .locations-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .chile-map {
+        width: 250px;
+        height: 400px;
+    }
+    
+    .impact-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .intro-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .mission-card h3,
+    .vision-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .chile-map {
+        width: 200px;
+        height: 350px;
+    }
+    
+    .impact-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .impact-description {
+        text-align: center;
+    }
+    
+    .impact-description ul {
+        text-align: left;
+    }
+}
+

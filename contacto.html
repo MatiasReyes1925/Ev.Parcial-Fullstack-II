@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - HuertoHogar</title>
+    <link rel="website icon" type="image/png" href="images/logoPagina.svg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html" style="text-decoration: none; color: inherit;">HuertoHogar</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+                    <li><a href="carrito.html" class="nav-link cart-link">Carrito (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="login.html" class="nav-link">Iniciar Sesión</a></li>
+                    <li><a href="registro.html" class="nav-link">Registro</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Contáctanos</h1>
+                <p class="page-subtitle">Estamos aquí para ayudarte. Escríbenos y te responderemos pronto.</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Información de Contacto</h2>
+                        <p class="contact-intro">¿Tienes alguna pregunta sobre nuestros productos o servicios? No dudes en contactarnos. Nuestro equipo está listo para ayudarte.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">📧</div>
+                                <div class="method-info">
+                                    <h4>Email</h4>
+                                    <p>info@huertohogar.cl</p>
+                                    <span>Respuesta en 24 horas</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">📞</div>
+                                <div class="method-info">
+                                    <h4>Teléfono</h4>
+                                    <p>+56 9 1234 5678</p>
+                                    <span>Lun-Vie 9:00-18:00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">💬</div>
+                                <div class="method-info">
+                                    <h4>WhatsApp</h4>
+                                    <p>+56 9 1234 5678</p>
+                                    <span>Atención inmediata</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">📍</div>
+                                <div class="method-info">
+                                    <h4>Oficina Principal</h4>
+                                    <p>Av. Providencia 1234<br>Santiago, Chile</p>
+                                    <span>Lun-Vie 9:00-17:00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-contact">
+                            <h4>Síguenos en Redes Sociales</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link facebook">
+                                    <span class="social-icon">📘</span>
+                                    Facebook
+                                </a>
+                                <a href="#" class="social-link instagram">
+                                    <span class="social-icon">📷</span>
+                                    Instagram
+                                </a>
+                                <a href="#" class="social-link twitter">
+                                    <span class="social-icon">🐦</span>
+                                    Twitter
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <h2>Envíanos un Mensaje</h2>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Nombre Completo *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Teléfono</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Asunto *</label>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Selecciona un asunto</option>
+                                        <option value="consulta-productos">Consulta sobre Productos</option>
+                                        <option value="problema-pedido">Problema con Pedido</option>
+                                        <option value="sugerencia">Sugerencia</option>
+                                        <option value="colaboracion">Colaboración Comercial</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="city">Ciudad</label>
+                                <select id="city" name="city">
+                                    <option value="">Selecciona tu ciudad</option>
+                                    <option value="santiago">Santiago</option>
+                                    <option value="puerto-montt">Puerto Montt</option>
+                                    <option value="villarica">Villarica</option>
+                                    <option value="nacimiento">Nacimiento</option>
+                                    <option value="vina-del-mar">Viña del Mar</option>
+                                    <option value="valparaiso">Valparaíso</option>
+                                    <option value="concepcion">Concepción</option>
+                                    <option value="otra">Otra ciudad</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mensaje *</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Quiero recibir noticias y ofertas especiales por email
+                                </label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    Acepto los <a href="#" onclick="showTerms()">términos y condiciones</a> *
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Enviar Mensaje</span>
+                                <span class="btn-loading" style="display: none;">Enviando...</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h4>¿Cuáles son los tiempos de entrega?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Los tiempos de entrega varían según tu ubicación: Santiago 24 horas, Valparaíso y Viña del Mar 24-48 horas, otras ciudades 48-72 horas. Siempre te notificaremos el estado de tu pedido.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h4>¿Cómo garantizan la frescura de los productos?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Trabajamos directamente con productores locales y mantenemos una cadena de frío desde la cosecha hasta tu puerta. Todos nuestros productos son seleccionados el mismo día del envío.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h4>¿Puedo cambiar o cancelar mi pedido?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Puedes modificar o cancelar tu pedido hasta 2 horas después de haberlo realizado. Después de ese tiempo, el pedido entra en preparación y no puede ser modificado.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h4>¿Qué métodos de pago aceptan?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Aceptamos tarjetas de crédito y débito, transferencias bancarias y pago contra entrega. Todos los pagos son seguros y están protegidos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h4>¿Tienen productos orgánicos certificados?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, todos nuestros productos orgánicos cuentan con certificación oficial. Trabajamos solo con productores que cumplen con los estándares de agricultura orgánica.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h4>¿Hacen entregas los fines de semana?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Actualmente realizamos entregas de lunes a viernes. Los pedidos realizados los fines de semana se procesan el lunes siguiente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HuertoHogar</h3>
+                    <p>Conectando a las familias chilenas con el campo, promoviendo un estilo de vida saludable y sostenible.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="productos.html?categoria=frutas">Frutas Frescas</a></li>
+                        <li><a href="productos.html?categoria=verduras">Verduras Orgánicas</a></li>
+                        <li><a href="productos.html?categoria=organicos">Productos Orgánicos</a></li>
+                        <li><a href="productos.html?categoria=lacteos">Productos Lácteos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Email: info@huertohogar.cl</p>
+                    <p>Teléfono: +56 9 1234 5678</p>
+                    <p>Horario: Lun-Vie 9:00-18:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HuertoHogar. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+</html>
+

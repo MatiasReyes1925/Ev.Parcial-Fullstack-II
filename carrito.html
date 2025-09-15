@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - HuertoHogar</title>
+    <link rel="website icon" type="image/png" href="images/logoPagina.svg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carrito.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html" style="text-decoration: none; color: inherit;">HuertoHogar</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                    <li><a href="carrito.html" class="nav-link cart-link active">Carrito (<span id="cart-count">0</span>)</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Carrito de Compras</h1>
+                <p class="page-subtitle">Revisa tus productos seleccionados</p>
+            </div>
+        </section>
+
+        <section class="cart-section">
+            <div class="container">
+                <div class="cart-content">
+                    <div class="cart-items-container">
+                        <h2>Productos en tu carrito</h2>
+                        <div id="cart-items">
+                            <!-- Los items del carrito se cargarán dinámicamente -->
+                        </div>
+                    </div>
+                    
+                    <div class="cart-summary">
+                        <div class="summary-card">
+                            <h3>Resumen del Pedido</h3>
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span id="cart-total">$0 CLP</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Envío:</span>
+                                <span>Gratis</span>
+                            </div>
+                            <div class="summary-row total-row">
+                                <span>Total:</span>
+                                <span id="final-total">$0 CLP</span>
+                            </div>
+                            
+                            <button class="checkout-btn" onclick="proceedToCheckout()">
+                                Proceder al Pago
+                            </button>
+                            
+                            <div class="shipping-info">
+                                <h4>Información de Envío</h4>
+                                <p>📦 Envío gratis en pedidos superiores a $15.000</p>
+                                <p>🚚 Entrega en 24-48 horas</p>
+                                <p>📍 Cobertura en 9 ciudades de Chile</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="continue-shopping">
+                    <a href="productos.html" class="continue-btn">
+                        ← Continuar Comprando
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de Checkout -->
+        <div id="checkout-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeCheckoutModal()">&times;</span>
+                <h2>Finalizar Compra</h2>
+                <form id="checkout-form">
+                    <div class="form-section">
+                        <h3>Información Personal</h3>
+                        <div class="form-group">
+                            <label for="customer-name">Nombre Completo *</label>
+                            <input type="text" id="customer-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-email">Email *</label>
+                            <input type="email" id="customer-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-phone">Teléfono *</label>
+                            <input type="tel" id="customer-phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Dirección de Entrega</h3>
+                        <div class="form-group">
+                            <label for="delivery-address">Dirección Completa *</label>
+                            <textarea id="delivery-address" name="address" rows="3" required placeholder="Calle, número, comuna, ciudad"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="delivery-city">Ciudad *</label>
+                            <select id="delivery-city" name="city" required>
+                                <option value="">Selecciona tu ciudad</option>
+                                <option value="santiago">Santiago</option>
+                                <option value="puerto-montt">Puerto Montt</option>
+                                <option value="villarica">Villarica</option>
+                                <option value="nacimiento">Nacimiento</option>
+                                <option value="vina-del-mar">Viña del Mar</option>
+                                <option value="valparaiso">Valparaíso</option>
+                                <option value="concepcion">Concepción</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="delivery-date">Fecha de Entrega Preferida</label>
+                            <input type="date" id="delivery-date" name="delivery-date" min="">
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Método de Pago</h3>
+                        <div class="payment-methods">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="credit-card" checked>
+                                <span>💳 Tarjeta de Crédito/Débito</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="transfer">
+                                <span>🏦 Transferencia Bancaria</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cash">
+                                <span>💵 Pago Contra Entrega</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" onclick="closeCheckoutModal()" class="cancel-btn">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="confirm-btn">
+                            Confirmar Pedido
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HuertoHogar</h3>
+                    <p>Conectando a las familias chilenas con el campo, promoviendo un estilo de vida saludable y sostenible.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="productos.html?categoria=frutas">Frutas Frescas</a></li>
+                        <li><a href="productos.html?categoria=verduras">Verduras Orgánicas</a></li>
+                        <li><a href="productos.html?categoria=organicos">Productos Orgánicos</a></li>
+                        <li><a href="productos.html?categoria=lacteos">Productos Lácteos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Email: info@huertohogar.cl</p>
+                    <p>Teléfono: +56 9 1234 5678</p>
+                    <p>Horario: Lun-Vie 9:00-18:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HuertoHogar. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+</html>
+
