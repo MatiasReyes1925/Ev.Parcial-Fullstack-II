@@ -5,7 +5,7 @@
 ## Integrantes del Proyecto
 - **Jean Pierre Valenzuela Navarrete**
 - **Matias Eduardo Reyes Agilera**
-- **Cristobal Andres CEA GUZMAN**
+- **Cristobal Andres Cea Guzman**
 
 ## Descripción
 Sitio web para la tienda online HuertoHogar, especializada en productos frescos del campo. Desarrollado según las especificaciones de la evaluación parcial DSY1104.
