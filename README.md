@@ -1,7 +1,11 @@
-<<<<<<< HEAD
 # Ev.Parcial-Fullstack-II
-=======
+
 # HuertoHogar - Sitio Web
+
+## Integrantes del Proyecto
+- **Jean Pierre Valenzuela Navarrete**
+- **Matias Eduardo Reyes Agilera**
+- **Cristobal Andres CEA GUZMAN**
 
 ## Descripción
 Sitio web para la tienda online HuertoHogar, especializada en productos frescos del campo. Desarrollado según las especificaciones de la evaluación parcial DSY1104.
@@ -204,5 +208,3 @@ El sitio incluye productos de ejemplo en las siguientes categorías:
 **Desarrollado para la evaluación parcial DSY1104**  
 **Fecha**: Septiembre 2025  
 **Versión**: 1.0
-
->>>>>>> Visual_2
