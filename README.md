@@ -199,6 +199,6 @@ El sitio incluye productos de ejemplo en las siguientes categorías:
 
 ---
 **Desarrollado para la evaluación parcial DSY1104**  
-**Fecha**: Septiembre 2024  
+**Fecha**: Septiembre 2025  
 **Versión**: 1.0
 

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="image/png" href="images/logoPagina.svg">
+    <title>Panel de Administración - HuertoHogar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>HuertoHogar - Admin</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                    <li><a href="carrito.html" class="nav-link cart-link">Carrito (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="#" id="logout-btn" class="nav-link">Cerrar Sesión</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="admin-section">
+            <div class="admin-container">
+                <div class="admin-header">
+                    <h2>Panel de Administración</h2>
+                    <p>Bienvenido, <span id="admin-name">Administrador</span></p>
+                </div>
+
+                <div class="admin-tabs">
+                    <button class="tab-button active" data-tab="dashboard">Dashboard</button>
+                    <button class="tab-button" data-tab="products">Productos</button>
+                    <button class="tab-button" data-tab="orders">Pedidos</button>
+                    <button class="tab-button" data-tab="users">Usuarios</button>
+                </div>
+
+                <!-- Dashboard Tab -->
+                <div id="dashboard" class="tab-content active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">📊</div>
+                            <div class="stat-info">
+                                <h3>Ventas Totales</h3>
+                                <p class="stat-number">$2,450,000</p>
+                                <span class="stat-change positive">+12% este mes</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📦</div>
+                            <div class="stat-info">
+                                <h3>Productos</h3>
+                                <p class="stat-number">156</p>
+                                <span class="stat-change positive">+8 nuevos</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-info">
+                                <h3>Usuarios</h3>
+                                <p class="stat-number">1,234</p>
+                                <span class="stat-change positive">+45 este mes</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🛒</div>
+                            <div class="stat-info">
+                                <h3>Pedidos</h3>
+                                <p class="stat-number">89</p>
+                                <span class="stat-change neutral">Pendientes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recent-activity">
+                        <h3>Actividad Reciente</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <span class="activity-time">Hace 5 min</span>
+                                <span class="activity-text">Nuevo pedido #1234 por $45,000</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-time">Hace 15 min</span>
+                                <span class="activity-text">Usuario María González se registró</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-time">Hace 1 hora</span>
+                                <span class="activity-text">Producto "Manzanas Fuji" actualizado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Tab -->
+                <div id="products" class="tab-content">
+                    <div class="section-header">
+                        <h3>Gestión de Productos</h3>
+                        <button class="btn-primary" id="add-product-btn">Agregar Producto</button>
+                    </div>
+                    
+                    <div class="products-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="products-tbody">
+                                <!-- Los productos se cargarán dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Orders Tab -->
+                <div id="orders" class="tab-content">
+                    <div class="section-header">
+                        <h3>Gestión de Pedidos</h3>
+                        <select id="order-filter">
+                            <option value="all">Todos los pedidos</option>
+                            <option value="pending">Pendientes</option>
+                            <option value="processing">En proceso</option>
+                            <option value="shipped">Enviados</option>
+                            <option value="delivered">Entregados</option>
+                        </select>
+                    </div>
+                    
+                    <div class="orders-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID Pedido</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Total</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-tbody">
+                                <!-- Los pedidos se cargarán dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Users Tab -->
+                <div id="users" class="tab-content">
+                    <div class="section-header">
+                        <h3>Gestión de Usuarios</h3>
+                        <input type="text" id="user-search" placeholder="Buscar usuarios...">
+                    </div>
+                    
+                    <div class="users-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Teléfono</th>
+                                    <th>Fecha Registro</th>
+                                    <th>Tipo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-tbody">
+                                <!-- Los usuarios se cargarán dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para agregar/editar producto -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Agregar Producto</h3>
+                <span class="close">&times;</span>
+            </div>
+            <form id="product-form">
+                <div class="form-group">
+                    <label for="product-name">Nombre del Producto</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-category">Categoría</label>
+                    <select id="product-category" required>
+                        <option value="">Seleccionar categoría</option>
+                        <option value="frutas">Frutas Frescas</option>
+                        <option value="verduras">Verduras Orgánicas</option>
+                        <option value="organicos">Productos Orgánicos</option>
+                        <option value="lacteos">Productos Lácteos</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-price">Precio</label>
+                        <input type="number" id="product-price" min="0" step="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-stock">Stock</label>
+                        <input type="number" id="product-stock" min="0" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Descripción</label>
+                    <textarea id="product-description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-image">URL de Imagen</label>
+                    <input type="url" id="product-image">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="cancel-btn">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HuertoHogar</h3>
+                    <p>Panel de administración para la gestión de la tienda online.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Volver al sitio</a></li>
+                        <li><a href="productos.html">Ver productos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HuertoHogar. Panel de Administración.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
+
